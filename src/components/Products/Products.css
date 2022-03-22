@@ -17,6 +17,7 @@
 .products-container{
     display: grid;
     grid-template-columns: 4fr 0.8fr;
+    margin-top: 80px;
 }
 .devide-product{
     display: grid;
@@ -26,11 +27,13 @@
 .products-left{
     text-align: center;
     margin-left: 50px;
+    overflow-y: scroll;
+    height: 100vh;
 }
 .products-left h1{
     margin: 35px;
 }
 .products-right{
-    border: 1px solid red;
+    background: #ffcfb3;
     text-align: center;
 }

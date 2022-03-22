@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Card from '../Card/Card';
 import DisplayProducts from '../DisplayProducts/DisplayProducts';
 import './Products.css'
 // import '../../fakeData/products.json'
@@ -33,8 +34,7 @@ const Products = () => {
             <div className='products-right'>
                 <div className='stay-position'>
                     <h1 className='product-title tow'>your cart</h1>
-                    <h3>Selected Items:{cart.length}</h3>
-                    <p>Total Price:</p>
+                    <Card cart={cart}></Card>
                 </div>
             </div>
         </div>
