@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.product-container {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    border: 2px solid rgb(156, 156, 156);
+    border-radius: 8px;
+    padding: 6px 0px;
+    overflow: hidden;
+}
+.product-container img{
+    width: 285px;
+    height: 285px;
+    border-radius: 8px;
+}
+.cart-btn{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 12px 0px;
+    font-weight: 400;
+    font-size: 18px;
+    border: none;
+    background-color: #FFE0B3;
+    border-top:2px solid rgb(156, 156, 156);
+ 
+}

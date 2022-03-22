@@ -11,3 +11,26 @@
     -webkit-text-fill-color: transparent;
     font-size: 35px;
 }
+.tow{
+    font-size: 25px;
+}
+.products-container{
+    display: grid;
+    grid-template-columns: 4fr 0.8fr;
+}
+.devide-product{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+}
+.products-left{
+    text-align: center;
+    margin-left: 50px;
+}
+.products-left h1{
+    margin: 35px;
+}
+.products-right{
+    border: 1px solid red;
+    text-align: center;
+}
