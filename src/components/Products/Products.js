@@ -16,10 +16,10 @@ const Products = () => {
 
 
     const showCart = (items) => {
-
         const newcart = [...cart, items]
         console.log(newcart)
         setCurt(newcart)
+
     }
     return (
         <div className='products-container'>
@@ -32,10 +32,7 @@ const Products = () => {
                 </div>
             </div>
             <div className='products-right'>
-                <div className='stay-position'>
-                    <h1 className='product-title tow'>your cart</h1>
-                    <Card cart={cart}></Card>
-                </div>
+                <Card cart={cart}></Card>
             </div>
         </div>
     );
