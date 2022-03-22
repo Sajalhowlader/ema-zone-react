@@ -4,7 +4,7 @@ import './Products.css'
 // import '../../fakeData/products.json'
 const Products = () => {
     const [porducts, setProducts] = useState([]);
-    const [cart, setCurt] = useState([0])
+    const [cart, setCurt] = useState([])
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
@@ -14,8 +14,11 @@ const Products = () => {
 
 
 
-    const showCart = (product) => {
-        setCurt([...cart, product])
+    const showCart = (items) => {
+
+        const newcart = [...cart, items]
+        console.log(newcart)
+        setCurt(newcart)
     }
     return (
         <div className='products-container'>
@@ -28,9 +31,11 @@ const Products = () => {
                 </div>
             </div>
             <div className='products-right'>
-                <h1 className='product-title tow'>your cart</h1>
-                <h3>Selected Items:{count}</h3>
-                <p>Total Price:</p>
+                <div className='stay-position'>
+                    <h1 className='product-title tow'>your cart</h1>
+                    <h3>Selected Items:{cart.length}</h3>
+                    <p>Total Price:</p>
+                </div>
             </div>
         </div>
     );
