@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.product-title{
+    margin-top: 20px;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(rgb(200, 4, 168), rgb(63, 9, 209));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+}

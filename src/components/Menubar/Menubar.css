@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.nav-container{
+    background-color: 
+    #1C2B35;  
+}
+.nav-container a{
+    color: white;
+    margin-right: 36px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.nav-container a:hover{
+    color: tomato;
+}
+.info-container{
+    width: 1170px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+}
