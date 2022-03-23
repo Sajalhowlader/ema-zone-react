@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Card from '../Card/Card';
 import DisplayProducts from '../DisplayProducts/DisplayProducts';
 import './Products.css'
 // import '../../fakeData/products.json'
 const Products = () => {
     const [porducts, setProducts] = useState([]);
+    // console.log(porducts)
     const [cart, setCurt] = useState([])
     useEffect(() => {
         fetch('products.json')
@@ -12,13 +14,48 @@ const Products = () => {
             .then(data => setProducts(data))
     }, [])
 
+    useEffect(() => {
+        const savecart = []
+        const storeCart = getStoredCart()
+        for (const id in storeCart) {
+            const addProduct = porducts.find(product => product.id === id)
+            if (addProduct) {
+                const quantity = storeCart[id]
+                console.log(quantity)
+                addProduct.quantity = quantity
+                savecart.push(addProduct)
+            }
+        }
+        setCurt(savecart)
+    }, [porducts])
 
+    // useEffect(() => {
+    //     const storeCart = getStoredCart()
+    //     for (const id in storeCart) {
+    //         const addProduct = porducts.find(product => product.id = id)
+    //         if (addProduct) {
+
+    //         }
+
+    //     }
+    // }, [])
 
 
     const showCart = (items) => {
-        const newcart = [...cart, items]
-        console.log(newcart)
-        setCurt(newcart)
+        let newCart = []
+        const exists = cart.find(product => product.id === items.id)
+
+        if (!exists) {
+            items.quantity = 1
+            newCart = [...cart, items]
+        } else {
+            const rest = cart.filter(product => product.id !== items.id);
+            exists.quantity = exists + 1;
+            newCart = [...rest, exists]
+        }
+
+        setCurt(newCart)
+        addToDb(items.id)
 
     }
     return (
